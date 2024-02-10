@@ -15,17 +15,6 @@ from os import system
 from os import name
 from datetime import datetime
 
-
-# Kamus Global
-# PATH        = [] # 
-# ELPATH      = "" #
-# OPT_PATH    = "" #
-# OPT_TOKEN   = "" #
-# ROWS        = 0  #
-# COLS        = 0  #
-# MAXPOINT    = 0  #
-# MATR        = [] #
-# SUBSTRING   = [] #
 ALPHANUMERIC = {'a','b','c','d','e','f',
                 'A','B','C','D','E','F',
                 '0','1','2','3','4','5',
