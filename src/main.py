@@ -315,7 +315,7 @@ class App(customtkinter.CTk):
                     for j in range(randomnum):
                         seq += random.choice(tokenArray) + " "
                     sequence[i] = [seq.strip(), 0]
-                    sequence[i][1] = random.randint(0,100)
+                    sequence[i][1] = random.randint(-100,100)
                     for k in sequence:
                         while sequence[i][0] in k[0] and i!=sequence.index(k):
                             sequence[i][0] = sequence[i][0][:3]
