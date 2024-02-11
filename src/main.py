@@ -1,3 +1,16 @@
+# Program Cyberpunk 2077 Breach Protocol Solver dengan Brute Force
+
+# M. Hanief Fatkhan Nashrullah
+# 13522100
+# 09/02/2024
+
+# Desc : Sebuah program untuk mencari solusi dari minigame meretas pada permainan video Cyberpunk 2077. 
+#        Minigame ini merupakan simulasi peretasan jaringan local dari ICE 
+#        (Intrusion Countermeasures Electronics) pada permainan Cyberpunk 2077.
+#       *+GUI :D
+
+
+# Import Library
 import customtkinter
 import tkinter
 import os
@@ -6,6 +19,7 @@ import random
 import webbrowser
 from datetime import datetime
 
+# OS Check
 if os.name=="nt":
     exe_path = sys.argv[0]
     os.chdir(os.path.dirname(exe_path))
@@ -13,9 +27,11 @@ if os.name=="nt":
 else:
     file_path = os.getcwd()
 
+# Default Color Theme
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 
+# Batasan Input Token
 ALPHANUMERIC = {'a','b','c','d','e','f',
                 'A','B','C','D','E','F',
                 '0','1','2','3','4','5',
@@ -23,15 +39,18 @@ ALPHANUMERIC = {'a','b','c','d','e','f',
 
 NUMBER = {'0','1','2','3','4','5','6','7','8','9','0'}
 
+# App
 class App(customtkinter.CTk):
     
     def __init__(self):
+
+        # Tab Random Input
         def randomizer():
             self.mainProgram = customtkinter.CTkFrame(self,fg_color="#141414",width=500,corner_radius=0)
             self.mainProgram.grid(row=0,column=1,sticky="nsew")
-            # Random Value Solver
             global CUSTOM
             CUSTOM = False
+
             # Unique Token Count
             self.label_uniqueTokenNum = customtkinter.CTkLabel(
                 self.mainProgram,
@@ -97,12 +116,13 @@ class App(customtkinter.CTk):
             self.button_solve = customtkinter.CTkButton(self.mainProgram,text="Solve",font=("Terminal",14),command=solution)
             self.button_solve.grid(row=6,column=0,sticky="sw",pady=(50,0),padx=(22.5,0))
 
+        # Custom Value Tab / Import Txt Tab
         def customVal():
             global CUSTOM
             CUSTOM = True
             self.mainProgram = customtkinter.CTkFrame(self,fg_color="#141414",width=500,corner_radius=0)
             self.mainProgram.grid(row=0,column=1,sticky="nsew")
-            # Custom Value Solver
+
             # Enter Code Matrix
             self.label_codeMatrix = customtkinter.CTkLabel(
                 self.mainProgram,
@@ -154,6 +174,7 @@ class App(customtkinter.CTk):
             self.button_solve = customtkinter.CTkButton(self.mainProgram,text="Solve",font=("Terminal",14),command=solution)
             self.button_solve.grid(row=4,column=1,sticky="sw",pady=(50,0),padx=(50,0))
         
+        # Open Txt Prompt
         def opentxtFiles():
             self.filename = tkinter.filedialog.askopenfilename(initialdir=file_path,title="Select a *.txt file",filetypes=([("Text Documents","*.txt")]))
             file = open(self.filename,"r")
@@ -188,6 +209,7 @@ class App(customtkinter.CTk):
             self.entry_sequence.insert("1.0", sequence)
             file.close()
 
+        # Input Validation
         def string_validation(alphabet,length,text,equalLength):
             words = text.split(" ")
             notEmpty = False
@@ -204,6 +226,7 @@ class App(customtkinter.CTk):
                         return False
             return notEmpty
         
+        # Save to File Prompt
         def saveToFile():
             global STRING_TEMP
             try:
@@ -215,6 +238,7 @@ class App(customtkinter.CTk):
                 print("exception")
                 pass
 
+        # Custom Input Getter
         def customInput():
             global ALPHANUMERIC
             valid = True
@@ -257,6 +281,7 @@ class App(customtkinter.CTk):
             except:
                 return [],[],0,False
 
+        # Random Input Generator
         def randomInput():
             global ALPHANUMERIC
             global NUMBER
@@ -306,9 +331,11 @@ class App(customtkinter.CTk):
             
             return matrix,sequence,bufferSize,valid
         
+        # My Youtube Channel (pls don't click :D)
         def yt_link():
             webbrowser.open_new("https://www.youtube.com/watch?v=W_czMS95ngY")
         
+        # Depth First Search Algorithm
         def dfs(r,c,d,m,horizontal):
             global MATR
             global ROWS
@@ -357,6 +384,7 @@ class App(customtkinter.CTk):
             ELPATH = ELPATH[:-3]
             return
         
+        # Display Solution
         def solution():
             global MATR
             global ROWS
@@ -514,6 +542,7 @@ class App(customtkinter.CTk):
             except:
                 pass
         
+        # About Me Pop-up Window
         def about_me():
             about_me_window = customtkinter.CTkToplevel(self)
             about_me_window.title("About Me")
@@ -540,6 +569,8 @@ class App(customtkinter.CTk):
 
 
         super().__init__()
+
+        # App WxH
         appWidth = 800
         appHeight = 600
         screenWidth = self.winfo_screenwidth()
