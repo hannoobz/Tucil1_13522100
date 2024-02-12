@@ -33,5 +33,16 @@ pyinstaller -F main.py
 python3 main.py
 ```
 2. Klik tombol di bagian samping kiri untuk memilih mode input
-![Randomized Input](screenshot1.png)
-![Custom Input](screenshot2.png)
+ ![Randomized Input](screenshot1.png)  
+ ![Custom Input](screenshot2.png)  
+
+3. Masukkan input pada entry yang tersedia, atau dapat juga dengan memilih 'Open txt file' pada input 'Custom Value'
+ ![Randomized Input Filled](screenshot3.png)  
+ ![Custom Input Filled](screenshot4.png)  
+
+4. Klik 'Solve' dan akan muncul pop up solusi. Klik 'Save Result' untuk menyimpan solusi  
+ ![Result](screenshot5.png)   
+
+## Author
+Created by M. Hanief Fatkhan Nashrullah (13522100)  
+email : 13522100@std.stei.itb.ac.id
