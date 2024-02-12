@@ -15,7 +15,7 @@ Sebuah program yang bertujuan untuk menyelesaikan minigame breach protocol seper
 sudo apt install python3-pip
 sudo apt install python3-tk
 ```
-2. Buka repository dengan terminal, kemudian masuk ke directory src
+2. Buka repository dengan terminal, kemudian masuk ke directory `src`
 ```
 cd src
 ```
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 pyinstaller -F main.py
 ```
 ## Cara Menjalankan Program
-1. Program dapat dijalankan langsung dengan menjalankan executable `main.exe` yang ada pada directory `bin` atau melalui terminal dengan menjalankan perintah berikut pada directory src
+1. Program dapat dijalankan langsung dengan menjalankan executable `main.exe` yang ada pada directory `bin` atau melalui terminal dengan menjalankan perintah berikut pada directory `src`
 ```
 python3 main.py
 ```
