@@ -28,7 +28,7 @@ pip install -r requirements.txt
 pyinstaller -F main.py
 ```
 ## Cara Menjalankan Program
-1. Program dapat dijalankan langsung dengan menjalankan executable `main.exe` pada directory `bin` atau dengan terminal dan menjalankan perintah berikut pada directory src
+1. Program dapat dijalankan langsung dengan menjalankan executable `main.exe` yang ada pada directory `bin` atau melalui terminal dengan menjalankan perintah berikut pada directory src
 ```
 python3 main.py
 ```
