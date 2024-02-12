@@ -21,12 +21,13 @@ from datetime import datetime
 
 # OS Check
 if os.name=="nt":
-    exe_path = sys.argv[0]
-    os.chdir(os.path.dirname(exe_path))
-    file_path = os.getcwd()
-else:
-    file_path = os.getcwd()
-
+    try:
+        exe_path = sys.argv[0]
+        os.chdir(os.path.dirname(exe_path))
+    except:
+        pass
+file_path = os.getcwd()
+    
 # Default Color Theme
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
